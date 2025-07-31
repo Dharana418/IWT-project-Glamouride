@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(to right, #d4d4d4, #9bb1eb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-form {
+    background-color: white;
+    width: 400px;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeInUp 0.6s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-form h1 {
+    font-size: 32px;
+    color: black;
+    margin-bottom: 25px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: rgba(245, 245, 245, 0.9);
+    transition: border 0.3s, background-color 0.3s;
+    box-sizing: border-box;
+}
+
+/* Hover effect on inputs */
+.login-form input[type="email"]:hover,
+.login-form input[type="password"]:hover {
+    border-color: #7494ec;
+    background-color: #f0f4ff;
+}
+
+/* Login button styling */
+#login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #7494ec;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#login-button:hover {
+    background-color: #4a6ad2;
+    transform: translateY(-1px);
+}
+
+/* Password input container with icon */
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-container input {
+    width: 100%;
+    padding: 12px 45px 12px 15px; /* Right padding for icon */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: rgba(245, 245, 245, 0.9);
+    box-sizing: border-box;
+}
+
+/* Password toggle icon */
+.password-container .icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    pointer-events: auto;
+}
+
+.password-container .icon:hover {
+    opacity: 1;
+}
+
+/* Error text styling */
+.error-text {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+/* Accessibility label hiding */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Responsive for mobile */
+@media (max-width: 480px) {
+    .login-form {
+        width: 90%;
+        padding: 20px;
+    }
+}

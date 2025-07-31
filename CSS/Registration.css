@@ -42,8 +42,7 @@ body {
 .registration-form input[type="text"],
 .registration-form input[type="email"],
 .registration-form input[type="password"],
-.registration-form input[type="date"],
-.registration-form input[list] {
+.registration-form input[type="date"] {
   width: 100%;
   padding: 12px;
   margin-bottom: 20px;
@@ -53,7 +52,18 @@ body {
   transition: border-color 0.3s ease;
 }
 
-.registration-form input:focus {
+.registration-form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.registration-form input:focus,
+.registration-form select:focus {
   border-color: #7494ec;
 }
 
@@ -67,23 +77,35 @@ body {
 .registration-form input[type="radio"] {
   margin-right: 5px;
 }
-
-.registration-form input[type="submit"] {
-  background-color:#4a6ad2;
+.registration-form button[type="submit"] {
+  background-color: #4a6ad2;
   color: white;
-  width: 100%;
-  padding: 12px;
+  padding: 12px 24px;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
   font-size: 16px;
   font-weight: bold;
+  cursor: pointer;
   transition: background-color 0.3s ease;
+  display: block;
+  margin: 20px auto; /* This centers the button horizontally */
 }
 
-.registration-form input[type="submit"]:hover {
-  background-color:#4a6ad2;
+.registration-form button[type="submit"]:hover {
+  background-color: #3b5bc0;
 }
-.registration-form href{
-    
+
+#loginlink {
+  text-align: center;
+  margin-top: 20px;
+}
+#loginlink a {
+  text-decoration: none;
+  color: #0044cc;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+#loginlink a:hover {
+  color: #002288;
+  text-decoration: underline;
 }
