@@ -1,494 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    height: 300vh;
-    width: 115vw;
-    background-image:url(3428144_60241.jpg);
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  background-size: cover;         
+  background-repeat: no-repeat;  
+  background-position: center;   
+  min-height: 150vh;
+  display: flex;
+  background-color: #bcbcbc;
+  flex-direction: column;
+  color: #333;
+}
 
-}
-.footer h1{
-    position: absolute;
-    bottom: 0;
-    color: white;
-}
-.next,
-.previous {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%); 
-    height: 45px;
-    width: 45px;
-    color: black;
-    background-color: white;
-    border: 2px solid black; 
-    border-radius: 50%; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease; 
-    z-index: 10; 
-}
-.next {
-    right: 10px;
-}
-.previous {
-    left: 10px; 
-}
-.next:hover,
-.previous:hover {
-    background-color: black; 
-    color: white;
-    transform: translateY(-50%) scale(1.1); 
-}
-.next:active,
-.previous:active {
-    background-color: grey; 
-    color: white;
-    transform: translateY(-50%) scale(1); 
-}
-.footer h3{
-    position: absolute;
-    bottom: 10px;
-    left: 25px;
-    color: white;
-    font-weight: bold;
-}
-.fa {
-    padding: 20px;
-    font-size: 30px;
-    width: 5px;
-    height: 5px;
-    text-align: center;
-    text-decoration: none;
-}
-.fa-facebook {
-    position: absolute;
-    background: #3B5998;
-    color: white;
-    left: 55%;
-    bottom: 50%;
-}
-.fa-linkedin {
-    position: absolute;
-    background: #007bb5;
-    color: white;
-    left: 60%;
-    bottom: 50%;
-}
-.fa-youtube {
-    background: #bb0000;
-    color: white;
-    left: 70%;
-    bottom: 50%;
-} 
-.fa-instagram {
-    background: #ff2f00;
-    color: white;
-    left: 65%;
-    bottom: 50%;
-}
-.footer .navigation-bar{
-    position: absolute;
-    display: flex;
-    position: absolute;
-    bottom: 140px;
-    margin-left: 560px;
-    gap: 30px;
-}
-.E{
-    color: red;
-    font-size:x-large;
-    font-weight: bolder;
-}
-.logo-description{
-    position: absolute;
-    width: 400px;
-    height: 100px;
-    margin-left: 320px;
-    font-weight:bolder;
-    color: rgb(255, 255, 255);
-    font-style:initial;
-    margin-top: 10px;
-    font-size:small;
-}
-.navigation-bar ul {
-    display: flex;
-    gap: 180px; 
-    list-style: none;
-    margin-left: 50px;
-}
-.navigation-bar li {
-    display: inline-block;
-    cursor: pointer;
-}
-.footer input[type="text"]{
-    position: absolute;
-    top: 0;
-    left: 900px;
-    top: 14px;
-    width: 200px;
-    height: 30px;
-    background-color: rgb(255, 255, 255);
-}
-.footer input[type="submit"]{
-    position: absolute;
-    height: 20px;
-    width: 100px;
-    right: 130px;
-    top: 22px;
-    left: 1120px;
-    background-color: #000000;
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 2px;
-}
-.A{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: bold;
-    font-size: smaller;
-    bottom:2px;
-}
-.footer-endline{
-    position: absolute;
-    bottom: 0;
-    left: 76%;
-    color:white;
-    font-size: small;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: bold;
-}
-.navigation-bar a {
-    position: absolute;
-    color: white;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-    font-size: medium;
-    margin-left: 150px;
-}
-.navigation-bar a:hover {
-    color: #ddd; 
-}
-.fafa-facebook{
-    position: absolute;
-    left: 50%;
-
-}
-.footer a{
-    position: absolute;
-    color: white;
-    font-size: small;
-}
-.w {
-    margin-left: auto;
-    display:inline-block;
-    gap: 15px;
-}
-.w button a{
-    background-color: white;
-    color: rgb(244, 6, 6);
-    font-weight: bolder;
-}
 .header {
-    position:absolute;
-    width: 100%;
-    background-color: #444444;
-    height: 100px;
-    top: 0;
-    color: white;
+  background: black;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  color: white;
+  position: static;
+  width: 100%;
+  font-weight: bolder;
+  font-size: small;
 }
-.header img{
-    position: absolute;
-    width: 140px;
-    height: 100px;
+
+
+.site-logo {
+  width: 120px;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
-.header a {
-    color: white;
-    text-decoration: none; 
+
+.site-logo img {
+  max-height: 100%;
+  width: auto;
+}
+
+.header h1 {
+  margin-left: 20px;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+.horizontal-list {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.horizontal-list li {
+  background-color: rgb(0, 42, 69);
+  padding: 0.5rem 1rem;
+  border: 1px solid black;
+  cursor: pointer;
+  font-weight: bolder;
+  color: white;
 }
 .footer {
-    position:absolute;
+  position: relative;
+  background:rgb(0, 0, 46);
+  color: white;
+  padding: 30px 20px;
+  margin-top: auto;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.contact-us h2 {
+  margin-bottom: 10px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.contact-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+.logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.A p {
+  margin-top: 10px;
+  font-weight: bold;
+}
+.logo-description {
+  max-width: 500px;
+}
+
+.logo-description p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+input[type="email"] {
+  padding: 8px;
+  margin-top: 10px;
+  border: none;
+  width: 80%;
+  max-width: 250px;
+}
+
+.subscribe-button {
+  background-color: #fff;
+  color: #2c3e50;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.navigation-bar ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin: 15px 0;
+  flex-wrap: wrap;
+}
+
+.navigation-bar a {
+  color: white;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icon {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+  transition: transform 0.2s;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.footer-endline {
+  margin-top: 15px;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .horizontal-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .horizontal-list li {
+    margin: 5px 0;
+  }
+
+  .header h1 {
+    font-size: 1.4rem;
+  }
+
+  .logo-description {
+    max-width: 100%;
+  }
+
+  input[type="email"] {
     width: 100%;
-    background-color: #002F6C;
-    height: 400px;
-    bottom: 0%;
+  }
 }
-.footer img{
-    position: absolute;
-    height: 80%;
-    width: 300px;
-}
-.Wagon-R button{
-    position:absolute;
-    left: 50%;
-    right: 50%;
-    top: 70%;
-    height: 25px;
-    width: 80px;
-    font-weight: bold;
-    font-size:small;
-    background-color: #545454;
-    color: white;
-}
-.Wagon-R{
-    position:absolute;
-    height: 650px;
-    width: 400px;
-    background-color: #8fa2ae;
-    margin-top: 800px;
-    margin-left: 600px;
-    border: 2px solid;
-    border-color: black;
-}
-.Wagon-R h3{
-    position: absolute;
-    left: 40%;
-}
-.date{
-    position: absolute;
-    margin-bottom: 300px;
-}
-.fa-phone{
-    position: absolute;
-    margin-top: 60px;
-    margin-left: 5px;
-    color: white;
-    margin-left: 5px;
-}
-.material-icons{
-    position: absolute;
-    margin-top: 100px;
-    margin-left: 18px;
-    color: white;
-}
-.material-icons h4{
-    position: absolute;
-    margin-top: 75px;
-}
-.fa-home{
-    position: absolute;
-    margin-top: 120px;
-    color: white;
-}
-.contact-us{
-    position: absolute;
-    font-weight: bold;
-    font-size: small;
-}
-.contact-us h4{
-    position: absolute;
-    top: 65px;
-    margin-left: 70px;
-    color: white;
-    font-size: medium;
-    cursor: pointer;
-}
-.vehicle-list h1{
-    position: absolute;
-    top: 90px;
-    font-weight: bolder;
-    text-shadow: 0 0 3px #ffffff, 0 0 5px #000000;
-    left: 40%;
-    font-size:xx-large;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: rgb(0, 89, 255);
-}
-.Rosa-bus{
-    position: absolute;
-    margin-left: 1100px;
-    height: 650px;
-    width: 400px;
-    background-color: #e4c680;
-    border: 2px solid;
-    margin-top: 800px;
-}
-.MitsubishiPajero{
-    position: absolute;
-    height: 650px;
-    width: 400px;
-    background-color: rgb(209, 209, 209);
-    border: 2px solid;
-    border-color: rgb(0, 8, 113);
-    border-radius: 4px;
-    margin-left: 100px;
-}
-.MitsubishiPajero h3{
-    margin-left: 105px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.MitsubishiPajero input[type="button"]{
-    position: relative;
-    left: 50%;
-    right: 50%;
-    top: 40%;
-    height: 40px;
-    width: 120px;
-    font-weight: bold;
-    font-size: larger;
-}
-.vehicle-list{
-    margin-top: 200px;
-    display:inline-block;
-}
-.Rosa-bus button{
-    position: absolute;
-    left: 40%;
-    right: 45%;
-    top: 55%;
-    height: 25px;
-    width: 90px;
-    font-weight: bold;
-    font-size:small;
-    background-color:#545454;
-    color: white;
-}
-.Rosa-bus h3{
-    position: absolute;
-    left: 42%;
-    top: 45%;
-}
-.Wagon-R button{
-    position: absolute;
-    left: 40%;
-    right: 45%;
-    top: 55%;
-    height: 25px;
-    width: 90px;
-    font-weight: bold;
-    font-size:small;
-    background-color:#545454;
-    color: white;
-}
-.Hilux{
-    position:absolute;
-    height: 650px;
-    width: 400px;
-    background-color: #d29e79;
-    margin-top: 800px;
-    margin-left: 100px;
-    border: 2px solid;
-    border-color: black;
-}
-.Hilux button{
-    position: absolute;
-    left: 40%;
-    right: 45%;
-    top: 55%;
-    height: 25px;
-    width: 90px;
-    font-weight: bold;
-    font-size:small;
-    background-color:#545454;
-    color: white;
-}
-.ThreeWheel{
-    position: absolute;
-    float: left;
-    height: 650px;
-    width: 400px;
-    background-color: rgb(197, 180, 145);
-    margin-left: 600px;
-    border: 2px solid;
-    border-color: #444444;
-    border-radius: 4px;
-}
-.mainintro h1{
-    position: absolute;
-    left: 50%;
-    background-color: rgb(255, 255, 255);
-}
-.contact-us{
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    background-color: #0029bd;
-    height: 280px;
-    width: 280px;
-    cursor: pointer;
-}
-.Address{
-    position:relative;
-    font-weight: bolder;
-    margin-top: 145px;
-    font-size:small;
-    color: white;
-    margin-left: 60px;
-    cursor: pointer;
-}
-.contact-us h2{
-    position: absolute;
-    color: rgb(255, 255, 255);
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    left: 25%;
-    font-weight: bolder;
-}
-.Email{
-    position: absolute;
-    margin-top: 20px;
-    color: white;
-    margin-top: 100px;
-    margin-left: 60px;
-    cursor: pointer;
-}
-.HIACE{
-    position: absolute;
-    margin-left: 1100px;
-    height: 650px;
-    width: 400px;
-    background-color: #def8e6;
-    border: 2px solid;
-}
-.HIACE h3{
-    position: static;
-    font-weight: bold;
-    margin-left: 30%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.MitsubishiPajero button{
-    position: static;
-    background-color: #545454;
-    margin-left: 40%;
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-}
-.HIACE button{
-    margin-left: 40%;
-    background-color: #545454;
-    font-weight: bold;
-    color: white;
-}
-.book{
-    background-color:#8a6363;
-}
-.ThreeWheel button{
-    position: static;
-    background-color: #545454;
-    margin-left: 40%;
-    color: white;
-    font-weight: bold;
-}
-.ThreeWheel h3{
-    margin-left: 105px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.phone-number{
-    position: absolute;
-    margin-top: 75px;
-    color: white;
-    margin-left: 60px;
-}
-.slide{
-    position: absolute;
-    left: 0;
-    height: 100%;
-    width:100px;
-    background-color: lightslategrey;
-    margin-top:  100px;
-
-}
-

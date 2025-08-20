@@ -6,37 +6,32 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-
 body {
-  height: 100vh;
-  background: linear-gradient(to right, #d4d4d4, #9bb1eb);
+  height: 100%;
+  background: #0d0d2e;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding-top: 60px;
 }
-
 .registration-form {
-  width: 600px;
+  width: 550px;
   background-color: #fff;
-  border: 2px solid #818181;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   padding: 30px 40px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
-
 .registration-form h2 {
   text-align: center;
   font-size: 28px;
   margin-bottom: 25px;
-  color: #333;
+  color: #000000;
 }
 
 .registration-form label {
   display: block;
-  margin-bottom: 5px;
-  font-weight: 500;
-  color: #444;
+  margin-bottom: 1px;
+  font-size:small;
+  font-weight: bolder;
+  color: #000000;
 }
 
 .registration-form input[type="text"],
@@ -46,27 +41,16 @@ body {
   width: 100%;
   padding: 12px;
   margin-bottom: 20px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  transition: border-color 0.3s ease;
+  font-size: 12px;
 }
 
 .registration-form select {
   width: 100%;
   padding: 12px;
   margin-bottom: 20px;
-  border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 16px;
-  transition: border-color 0.3s ease;
 }
-
-.registration-form input:focus,
-.registration-form select:focus {
-  border-color: #7494ec;
-}
-
 .gender-options {
   display: flex;
   gap: 10px;
@@ -78,34 +62,31 @@ body {
   margin-right: 5px;
 }
 .registration-form button[type="submit"] {
-  background-color: #4a6ad2;
+  background-color: #000000;
   color: white;
   padding: 12px 24px;
   border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 12px;
+  font-weight: bolder;
   cursor: pointer;
-  transition: background-color 0.3s ease;
   display: block;
-  margin: 20px auto; /* This centers the button horizontally */
-}
-
-.registration-form button[type="submit"]:hover {
-  background-color: #3b5bc0;
+  margin: 20px auto;
 }
 
 #loginlink {
   text-align: center;
   margin-top: 20px;
+  font-size: small;
+  font-weight: bolder;
 }
 #loginlink a {
   text-decoration: none;
-  color: #0044cc;
-  font-weight: 500;
-  transition: color 0.3s ease;
+  color: #000000;
+  font-weight:bolder;
+
 }
-#loginlink a:hover {
-  color: #002288;
-  text-decoration: underline;
+.registration-form span {
+  font-weight: bold;
+  font-size: smaller;
+  color: red;
 }

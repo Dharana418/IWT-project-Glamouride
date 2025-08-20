@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const emailInput = document.getElementById('email');
     const errorMessage = document.getElementById('error-message');
 
-    // Toggle password visibility
     icon.addEventListener('click', () => {
         const isPassword = passwordInput.type === 'password';
         passwordInput.type = isPassword ? 'text' : 'password';
@@ -14,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
             : '../images/hide_8088557.png';
     });
 
-    // Form validation
     form.addEventListener('submit', (e) => {
         const email = emailInput.value.trim();
         const password = passwordInput.value.trim();
@@ -23,9 +21,19 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             errorMessage.style.display = 'block';
         } else {
+            e.preventDefault();
+
             errorMessage.style.display = 'none';
-            // Fake login simulation
-            alert("Logged in successfully! (This is a demo)");
+            
+            Swal.fire({
+                icon: 'success',
+                title: 'Login Successful!',
+                text: 'Welcome back!',
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+            }).then(() => {
+                window.location.href = '../Html/AdminDashboard.html';
+            });
         }
     });
 });

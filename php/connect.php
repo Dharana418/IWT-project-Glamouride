@@ -1,14 +1,13 @@
 <?php
-// connect.php
-$host = 'localhost';
-$db = 'users';
-$user = 'root';
-$pass = '';
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db = "users";
 
-$conn=new mysqli($host,$db,$user,$pass);
+$conn = new mysqli($host, $user, $pass, $db);
 
-if($conn->connect_error){
-    die("Connection failed:".$conn->connect_error);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+$conn->set_charset("utf8mb4");
 ?>
-
