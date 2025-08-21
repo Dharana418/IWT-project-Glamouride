@@ -28,10 +28,8 @@
             <textarea name="description" placeholder="Description" required></textarea><br>
             <label for="package-name">Package Price:</label><br>
             <input type="number" name="price" step="0.01" placeholder="Price" required><br>
-            <div class="preview">
-                <img src="" alt="" id="Image Preview">
-            </div>
             <input type="file" id="image" accept="image/*" onchange="previewImage(event)"><br>
+             <img src="" alt="" id="Image Preview">
             <button type="submit" name="add-package">Add Package</button>
         </form>
 </div>
