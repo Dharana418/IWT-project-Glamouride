@@ -42,7 +42,6 @@ header nav a:hover {
     left: 50%;
     transform: translate(-50%, -50%);
     display: grid;
-    padding: 20px;
     max-width: 600px;
     width: 100%;
     background-color: #ffffff;
