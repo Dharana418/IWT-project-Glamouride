@@ -4,61 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GlamourRide - Packages</title>
-<style>
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-header {
-    background: #252525;
-    color: #fff;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-header h1 { margin:0; font-size: 1.8rem; }
-nav a { color:#fff; text-decoration:none; margin-left:15px; }
-nav a:hover { color:#f1c40f; }
-
-.container { 
-    max-width: 900px; 
-    margin: 30px auto; 
-    padding: 20px; 
-}
-
-/* Form box */
-.form-box {
-    background: #fff; 
-    padding: 25px; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-.form-box h2 { margin-bottom: 20px; color: #252525; }
-
-form input, form textarea, form button {
-    width: 100%; 
-    padding: 10px; 
-    margin-bottom: 12px; 
-    border-radius: 5px; 
-    border: 1px solid #ccc;
-}
-form button {
-    background: #4a90e2; 
-    color:#fff; 
-    border:none; 
-    cursor:pointer;
-}
-form button:hover { background: #357ab8; }
-
-/* Responsive */
-@media(max-width:768px){
-    header { flex-direction: column; align-items: flex-start; }
-    nav a { margin: 5px 0 0 0; }
-}
-</style>
 </head>
 <body>
 
@@ -68,7 +13,7 @@ form button:hover { background: #357ab8; }
         <a href="#">Home</a>
         <a href="#">Packages</a>
         <a href="#">Bookings</a>
-        <a href="#">Logout</a>
+        <a href="../Html/Login.php">Logout</a>
     </nav>
 </header>
 
