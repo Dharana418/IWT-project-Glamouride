@@ -1,7 +1,39 @@
 <?php
+session_start();
+require 'connect.php';
 
+if (isset($_POST['add-package'])) {
+    $title = trim($_POST['title']);
+    $description = trim($_POST['description']);
+    $price = floatval($_POST['price']);
+    $image = $_FILES['image'];
+    $name = "";
 
+    // Handle image upload safely
+    if ($image['error'] === UPLOAD_ERR_OK) {
+        $tmp_name = $image['tmp_name'];
+        $ext = pathinfo($image['name'], PATHINFO_EXTENSION);
+        $allowed = ['jpg', 'jpeg', 'png', 'gif'];
 
+        if (in_array(strtolower($ext), $allowed)) {
+            // Generate unique filename to avoid conflicts
+            $name = uniqid("pkg_", true) . "." . $ext;
+            move_uploaded_file($tmp_name, "../uploads/$name");
+        } else {
+            die("Invalid file type. Only JPG, PNG, GIF allowed.");
+        }
+    }
 
+    // Insert package into database
+    $stmt = $conn->prepare("INSERT INTO packages (title, description, price, image) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssds", $title, $description, $price, $name);
 
+    if ($stmt->execute()) {
+        $stmt->close();
+        header("Location: ../Html/ManagerDashboard.php?success=1");
+        exit();
+    } else {
+        die("Database insert failed: " . $stmt->error);
+    }
+}
 ?>
