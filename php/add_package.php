@@ -8,6 +8,7 @@ if (isset($_POST['add-package'])) {
     $price = floatval($_POST['price']);
     $image = $_FILES['image'];
     $name = "";
+    $createdBY = $_SESSION['email']; 
 
     // Handle image upload safely
     if ($image['error'] === UPLOAD_ERR_OK) {
@@ -25,8 +26,8 @@ if (isset($_POST['add-package'])) {
     }
 
     // Insert package into database
-    $stmt = $conn->prepare("INSERT INTO packages (title, description, price, image) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssds", $title, $description, $price, $name);
+    $stmt = $conn->prepare("INSERT INTO packages (title, description, price, image,created_by) VALUES (?, ?, ?, ?,?)");
+    $stmt->bind_param("ssdss", $title, $description, $price, $name,$createdBY);
 
     if ($stmt->execute()) {
         $stmt->close();
