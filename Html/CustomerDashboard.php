@@ -21,7 +21,6 @@ if (!isset($_SESSION['email'])) {
     </div>
     <h1>GlamourRide</h1>
     <ul class="horizontal-list">
-      <li>Home</li>
       <li>Bookings</li>
       <li>My Bookings</li>
       <li>Profile</li>
