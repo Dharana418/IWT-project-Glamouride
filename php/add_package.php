@@ -14,12 +14,12 @@ if (isset($_POST['add-package'])) {
         $tmp_name = $image['tmp_name'];
         $ext = pathinfo($image['name'], PATHINFO_EXTENSION);
         $allowed = ['jpg', 'jpeg', 'png', 'gif'];
-
         if (in_array(strtolower($ext), $allowed)) {
             $name = uniqid("pkg_", true) . "." . $ext;
             move_uploaded_file($tmp_name, "../uploads/$name");
         } else {
-            echo '<script>
+            echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            <script>
             Swal.fire({
                 icon: "error",
                 title: "Invalid File",
@@ -35,7 +35,8 @@ if (isset($_POST['add-package'])) {
 
     if ($stmt->execute()) {
         $stmt->close();
-        echo '<script>
+        echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
         Swal.fire({
             icon: "success",
             title: "Success!",
@@ -47,7 +48,8 @@ if (isset($_POST['add-package'])) {
         });
         </script>';
     } else {
-        echo '<script>
+        echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
         Swal.fire({
             icon: "error",
             title: "Error!",
