@@ -1,61 +1,49 @@
 <?php
 session_start();
-require 'connect.php';
+include 'connect.php';
+if(isset($_POST['add-package'])){
+    $title=$_POST['title'];
+    $description=$_POST['description'];
+    $price=$_POST['price'];
+    $createdby=$_SESSION['email'];
 
-if (isset($_POST['add-package'])) {
-    $title = trim($_POST['title']);
-    $description = trim($_POST['description']);
-    $price = floatval($_POST['price']);
-    $image = $_FILES['image'];
-    $name = "";
-    $createdBY = $_SESSION['email'] ?? 'Unknown'; 
-
-    if ($image['error'] === UPLOAD_ERR_OK) {
-        $tmp_name = $image['tmp_name'];
-        $ext = pathinfo($image['name'], PATHINFO_EXTENSION);
-        $allowed = ['jpg', 'jpeg', 'png', 'gif'];
-        if (in_array(strtolower($ext), $allowed)) {
-            $name = uniqid("pkg_", true) . "." . $ext;
-            move_uploaded_file($tmp_name, "../uploads/$name");
-        } else {
-            echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-            <script>
-            Swal.fire({
-                icon: "error",
-                title: "Invalid File",
-                text: "Only JPG, PNG, GIF allowed."
-            });
-            </script>';
-            exit;
-        }
+    $packageCheck = "SELECT * FROM packages WHERE title='$title' AND description='$description' AND price='$price'";
+    $checkResult = mysqli_query($conn, $packageCheck);
+    if(mysqli_num_rows($checkResult) > 0) {
+        echo "<script>alert('This package is already registered!');</script>";
+        exit;
     }
+    $folder = 'uploads/';
+    $image_file = $_FILES['image']['name']; 
+    $file = $_FILES['image']['tmp_name'];     
+    $target_file = $folder . basename($image_file);
+    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+    if ($imageFileType != "jpg" && $imageFileType != "png" && 
+        $imageFileType != "jpeg" && $imageFileType != "gif") {
+        echo "<script>alert('Only JPG, JPEG, PNG & GIF files are allowed');</script>";
+        exit;
+    }
+    if ($_FILES['image']['size'] > 1048576) {
+        echo "<script>alert('Image is too large. Upload less than 1 MB');</script>";
+        exit;
+    }
+    if (!file_exists($folder)) {
+        mkdir($folder, 0777, true);
+    }
+    if (move_uploaded_file($file, $target_file)) {
+        $sql = "INSERT INTO packages (title, description, price, image, created_by) 
+                VALUES ('$title', '$description', '$price', '$image_file', '$createdby')";
 
-    $stmt = $conn->prepare("INSERT INTO packages (title, description, price, image, created_by) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssdss", $title, $description, $price, $name, $createdBY);
-
-    if ($stmt->execute()) {
-        $stmt->close();
-        echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script>
-        Swal.fire({
-            icon: "success",
-            title: "Success!",
-            text: "Package added successfully!",
-            timer: 2000,
-            showConfirmButton: false
-        }).then(() => {
-            window.location.href = "../php/add_package.php";
-        });
-        </script>';
+        if (mysqli_query($conn, $sql)) {
+            echo "<script>
+                alert('Package added successfully');
+                window.location.href = '../Html/ManagerDashboard.php';
+            </script>";
+        } else {
+            echo "<script>alert('Database Error: " . mysqli_error($conn) . "');</script>";
+        }
     } else {
-        echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script>
-        Swal.fire({
-            icon: "error",
-            title: "Error!",
-            text: "Failed to add package."
-        });
-        </script>';
+        echo "<script>alert('Error uploading image');</script>";
     }
 }
 ?>
