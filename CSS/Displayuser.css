@@ -2,8 +2,6 @@ body {
     position: relative;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background:linear-gradient(to right, #d9e3ff, #00182f);
-    padding: 30px;
-    margin: 0;
     max-width: 100%;
     
 }
@@ -26,7 +24,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 20px;
 }
 
 ul, .navbar ul {

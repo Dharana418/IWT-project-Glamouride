@@ -21,10 +21,14 @@ if (!isset($_SESSION['email'])) {
     </div>
     <h1>GlamourRide</h1>
     <ul class="horizontal-list">
-      <li>Bookings</li>
-      <li>My Bookings</li>
-      <li>Profile</li>
+      <li><a href="../Html/Bookingpage.php">Bookings</a></li>
+      <li><a href="../">My Bookings</a></li>
+      <li><a href="../">Profile</a></li>
       <li><a href="../Html/Login.php">Logout</a></li>
     </ul>
   </header>
+</body>
+</html>
+
+
   
