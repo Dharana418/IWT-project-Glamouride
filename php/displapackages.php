@@ -1,5 +1,9 @@
 <?php
-// displapackages.php
+session_start();
+if(!isset($_SESSION['email'])) {
+    header("Location: ../Html/Login.php");
+    exit();
+}
 include '../php/connect.php';
 ?>
 <!DOCTYPE html>
@@ -27,16 +31,16 @@ include '../php/connect.php';
   <thead>
     <tr>
       <th>ID</th>
-      <th><u>Package Name</u></th>
-      <th><u>Package Description</u></th>
-      <th><u>Package Price</u></th>
-      <th><u>Image</u></th>
-      <th><u>Actions</u></th>
+      <th>Package Name</th>
+      <th>Package Description</th>
+      <th>Package Price per 1KM</th>
+      <th>Image</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
 <?php
-$sql = "SELECT * FROM packages";
+$sql = "SELECT * FROM packages WHERE created_by = '".$_SESSION['email']."'";
 $result = mysqli_query($conn, $sql);
 
 if ($result && mysqli_num_rows($result) > 0) {
