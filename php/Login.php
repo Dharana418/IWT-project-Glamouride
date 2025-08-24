@@ -20,7 +20,7 @@ if (isset($_POST['login-button'])) {
             }
             if (strtolower($user['role']) === 'customer') {
                 $_SESSION['email']=$email;
-                header("Location: ../Html/CustomerDashboard.php");
+                header("Location: ../php/customerdisplaydetails.php");
                 exit();
             } else {
                 echo "You are not authorized to access the customer dashboard.";

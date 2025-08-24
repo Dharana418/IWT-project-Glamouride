@@ -8,6 +8,12 @@
 <script src="../JS/ManagerDashboard.js"></script>
 </head>
 <body>
+    <?php
+    if(!isset($_SESSION['email'])) {
+        header("Location: ../Html/Login.php");
+        exit();
+    }
+    ?>
 
 <header>
     <h1>GlamourRide</h1>

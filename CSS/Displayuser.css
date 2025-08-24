@@ -63,8 +63,8 @@ ul, .navbar ul {
 
 }
 .content-table td {
-  text-align: center;   /* centers content inside cell */
-  vertical-align: middle; /* aligns it in the middle vertically */
+  text-align: center;  
+  vertical-align: middle;
 }
 .btn.btn-primary {
     background-color: #007bff; 

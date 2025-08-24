@@ -9,6 +9,24 @@ include '../php/connect.php';
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+.btn.btn-primary {
+    background-color: #007bff; 
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-weight: bolder;
+    margin-left: 10px;
+}
+.btn.btn-danger{
+    background-color: #dc3545; 
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-weight: bolder;
+    margin-left: 10px;
+}
+  </style>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GlamourRide</title>
@@ -59,8 +77,8 @@ if ($result && mysqli_num_rows($result) > 0) {
 }
 
         echo "<td>
-                <a href='edit_package.php?id=".$row['id']."'>Edit</a> | 
-                <a href='delete_package.php?id=".$row['id']."' onclick=\"return confirm('Are you sure you want to delete this package?');\">Delete</a>
+                <a class='btn btn-primary' href='editpackage.php?id=".$row['id']."'>Edit</a> | 
+                <a class='btn btn-danger' href='deletepackage.php?id=".$row['id']."' onclick=\"return confirm('Are you sure you want to delete this package?');\">Delete</a>
               </td>";
         echo "</tr>";
     }
