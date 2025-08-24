@@ -61,7 +61,7 @@ $result = mysqli_query($conn, $sql);
               echo "</td>
                     <td>
                       <a class='btn btn-primary' href='userupdate.php?id={$row['id']}'>Update</a>
-                      <a class='btn btn-danger' href='userdelete.php?id={$row['id']}'>Delete</a>
+                      <a class='btn btn-danger' href='userdelete.php?id={$row['id']}' onclick=\"return confirm('Are you sure you want to delete this user?');\">Delete</a>
                     </td>
                   </tr>";
           }

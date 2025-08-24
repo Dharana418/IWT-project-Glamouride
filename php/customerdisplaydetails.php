@@ -25,6 +25,7 @@ $result = $conn->query($sql);
       <h1>GlamourRide</h1>
       <ul class="horizontal-list">
         <li><a href="../php/displapackages.php">Bookings</a></li>
+         <li><a href="../Html/Login.php">Feedback</a></li>
         <li><a href="../">Profile</a></li>
         <li><a href="../Html/Login.php">Logout</a></li>
       </ul>
@@ -41,7 +42,7 @@ $result = $conn->query($sql);
       <h4>Description:</h4>
       <p><?php echo htmlspecialchars($row['description']); ?></p>
       <p>Price per 1KM: Rs. <?php echo htmlspecialchars($row['price']); ?></p>
-      <button>Buy now</button>
+      <button id="<?php echo $row['id']; ?>">Buy now</button>
     </div>
   <?php endwhile; ?>
 </div>

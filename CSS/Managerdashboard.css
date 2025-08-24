@@ -2,11 +2,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: grey url("../images/1057791_960.jpg") no-repeat center center;
+  background:url("../images/1057791_960.jpg");
   background-size: cover;
 }
-
-/* Header */
 .header {
   background: black;
   height: 100px;
@@ -77,11 +75,11 @@ header nav a:hover {
     width: 100%;
     background-color: #ffffff;
     border: 3px solid black;
-    height: 1000px;
-    margin-top: 200px;
-    bottom: 40px;
+    height: 900px;
+    margin-top: 100px;
     padding: 20px;
     align-content: first baseline;
+    bottom: 40px;
 }
 
 .container input,
@@ -140,15 +138,4 @@ header nav a:hover {
 }
 .container button:hover {
     background-color: #002139;
-}
-.container img{
-    position: absolute;
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    margin-top: 10px;
-    margin-left: 200px;
-    background-color: #444;
-    border-radius: 100%;
-    border: 2px solid black;
 }

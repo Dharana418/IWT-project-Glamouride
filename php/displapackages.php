@@ -77,8 +77,8 @@ if ($result && mysqli_num_rows($result) > 0) {
 }
 
         echo "<td>
-                <a class='btn btn-primary' href='editpackage.php?id=".$row['id']."'>Edit</a> | 
-                <a class='btn btn-danger' href='deletepackage.php?id=".$row['id']."' onclick=\"return confirm('Are you sure you want to delete this package?');\">Delete</a>
+                <a class='btn btn-primary' href='vehicleeditpackage.php?id=".$row['id']."'>Edit</a> | 
+                <a class='btn btn-danger' href='vehicledeletepackage.php?id=".$row['id']."' onclick=\"return confirm('Are you sure you want to delete this package?');\">Delete</a>
               </td>";
         echo "</tr>";
     }
