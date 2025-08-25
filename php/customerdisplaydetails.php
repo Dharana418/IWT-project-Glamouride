@@ -42,7 +42,7 @@ $result = $conn->query($sql);
       <h4>Description:</h4>
       <p><?php echo htmlspecialchars($row['description']); ?></p>
       <p>Price per 1KM: Rs. <?php echo htmlspecialchars($row['price']); ?></p>
-      <button id="<?php echo $row['id']; ?>">Buy now</button>
+      <button id="<?php echo $row['id']; ?>" onclick="location.href='../php/customerbuynowpage.php?id=<?php echo $row['id']; ?>'">Buy now</button>
     </div>
   <?php endwhile; ?>
 </div>
