@@ -5,7 +5,7 @@ function previewImage(event) {
 
     reader.onload = function(e) {
         preview.src = e.target.result;
-        preview.style.display = "block"; // Show preview
+        preview.style.display = "block";
     }
 
     if (file) {
