@@ -41,5 +41,12 @@ function validation() {
         document.getElementById('birthdayv').innerHTML = "You must be at least 16 years old";
         return false;
     }
-    return true; 
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Registered Successfully',
+      showConfirmButton: true,
+      width: '400px'
+    });
+    return true;
 }
